@@ -27,11 +27,13 @@ Use the applicable gates before declaring a page complete. When reviewing, repor
 - When the house theme applies, light and medium blues carry selection and data emphasis; deep blue is limited to compact controls that require white-text contrast.
 - The page is mostly neutral; accents communicate action, selection, data, or status.
 - Border, radius, shadow, and spacing values come from a small consistent scale.
+- The application interior is white or near-white when using the reference blue-and-white theme; blue-gray does not wash over every working surface.
 - Standard cards are restrained; pills are reserved for statuses and truly pill-shaped controls.
 - Icons come from one coherent family and align optically with text.
 - Icon size, stroke, color, container, and corner character belong to the selected theme; no icon looks pasted in from another system.
 - A changed theme has no leftover raw colors, chart series, focus rings, shadows, overlay tints, or icon treatments from its predecessor.
 - Typography matches the density and container; compact panels do not contain hero-scale headings.
+- Font weight carries a clear hierarchy; routine page and panel headings are not all rendered at 700+.
 - No decorative orb, bokeh, heavy blur, or dominant single-hue gradient weakens clarity.
 
 ## Components And States
@@ -41,6 +43,7 @@ Use the applicable gates before declaring a page complete. When reviewing, repor
 - Tables handle loading, no rows, error, sorting, filtering, selection, overflow, and long cells as applicable.
 - Charts handle loading, no data, one point, zero, negative, missing, and large values as applicable.
 - Popovers and menus anchor to their trigger, fit within the viewport, and close predictably.
+- Selects, menus, date pickers, and popovers were visually inspected while open; their popup radius, border, shadow, icon, and selected state match the closed control.
 - Dialogs trap and restore focus and expose a clear close path.
 - Toasts supplement inline state; they do not carry information the user cannot recover.
 
@@ -83,6 +86,7 @@ Check:
 - no overlap, clipping, orphaned labels, or incoherent wrapping;
 - stable headers, sidebars, tables, toolbars, tiles, and chart dimensions;
 - popovers, menus, dialogs, and tooltips remain inside the viewport;
+- at least one representative dropdown or popover is captured open when overlays exist;
 - real assets, fonts, icons, and data visuals render;
 - hover, focus, active, selected, loading, empty, and error states are visually distinct;
 - browser console contains no new errors or repeated warnings.

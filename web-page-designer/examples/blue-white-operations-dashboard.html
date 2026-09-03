@@ -7,23 +7,23 @@
   <style>
     :root {
       color-scheme: light;
-      --canvas: #f1f5f9;
-      --canvas-strong: #dce6f0;
+      --canvas: #f6f8fb;
+      --canvas-strong: #d8e4ec;
       --surface: #ffffff;
-      --surface-subtle: #f9fbfd;
-      --surface-tinted: #f2f6ff;
+      --surface-subtle: #fafcfe;
+      --surface-tinted: #f4f7ff;
       --text: #2b3445;
       --text-strong: #172033;
       --text-muted: #6b7689;
       --text-faint: #9aa6b7;
-      --border: #e6ecf2;
-      --border-strong: #d4dee9;
-      --accent: #5b82e9;
-      --accent-hover: #4f76df;
-      --accent-active: #4168ce;
-      --accent-text: #315db8;
-      --accent-action: #315db8;
-      --accent-soft: #e6eeff;
+      --border: #e8edf3;
+      --border-strong: #dbe3ec;
+      --accent: #6a90ea;
+      --accent-hover: #5c83df;
+      --accent-active: #4f76d5;
+      --accent-text: #3a64b9;
+      --accent-action: #4772d1;
+      --accent-soft: #eaf0ff;
       --accent-subtle: #f4f7ff;
       --chart-blue: #75a0f3;
       --chart-blue-soft: #c7d8fa;
@@ -34,8 +34,8 @@
       --warning-soft: #fbf3e4;
       --danger: #c95f6c;
       --danger-soft: #fbebed;
-      --shadow-shell: 0 24px 70px rgb(44 65 92 / 0.12);
-      --shadow-panel: 0 1px 2px rgb(15 23 42 / 0.035);
+      --shadow-shell: 0 24px 70px rgb(44 65 92 / 0.105);
+      --shadow-panel: 0 1px 2px rgb(15 23 42 / 0.025), 0 10px 28px rgb(38 58 84 / 0.018);
       --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
     }
 
@@ -73,7 +73,7 @@
       overflow: hidden;
       background: var(--surface);
       border: 1px solid rgb(255 255 255 / 0.72);
-      border-radius: 26px;
+      border-radius: 30px;
       box-shadow: var(--shadow-shell);
     }
 
@@ -94,7 +94,7 @@
       padding: 0 8px;
       color: var(--text-strong);
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 680;
     }
 
     .brand-mark {
@@ -115,7 +115,7 @@
       padding: 0 10px 8px;
       color: var(--text-muted);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 650;
       text-transform: uppercase;
     }
 
@@ -128,7 +128,7 @@
       margin: 2px 0;
       padding: 0 10px;
       border: 0;
-      border-radius: 8px;
+      border-radius: 9px;
       background: transparent;
       color: var(--text-muted);
       text-align: left;
@@ -175,7 +175,7 @@
       border-radius: 50%;
       background: var(--accent-subtle);
       color: var(--accent-text);
-      font-weight: 700;
+      font-weight: 650;
     }
 
     .person { min-width: 0; }
@@ -199,13 +199,11 @@
 
     .search-wrap input,
     .table-tools input,
-    .table-tools select,
-    .field input,
-    .field select {
+    .field input {
       width: 100%;
       height: 36px;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 9px;
       background: var(--surface);
       color: var(--text);
       transition: border-color 150ms ease, box-shadow 150ms ease;
@@ -213,16 +211,90 @@
 
     .search-wrap input,
     .table-tools input,
-    .field input,
-    .field select { padding: 0 12px; }
+    .field input { padding: 0 12px; }
 
     input::placeholder { color: var(--text-faint); }
 
-    input:focus,
-    select:focus {
+    input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px rgb(91 130 233 / 0.11);
     }
+
+    .custom-select { position: relative; min-width: 0; }
+
+    .select-trigger {
+      display: flex;
+      width: 100%;
+      height: 36px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 11px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--text);
+      text-align: left;
+      transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .select-trigger::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex: 0 0 auto;
+      border-right: 1.5px solid var(--text-muted);
+      border-bottom: 1.5px solid var(--text-muted);
+      transform: translateY(-2px) rotate(45deg);
+      transition: transform 160ms var(--ease-out);
+    }
+
+    .select-trigger:hover { border-color: var(--border-strong); background: var(--surface-subtle); }
+    .select-trigger[aria-expanded="true"] { border-color: #bdcdec; box-shadow: 0 0 0 3px rgb(106 144 234 / 0.1); }
+    .select-trigger[aria-expanded="true"]::after { transform: translateY(2px) rotate(225deg); }
+
+    .select-menu {
+      position: absolute;
+      top: calc(100% + 7px);
+      left: 0;
+      right: 0;
+      z-index: 30;
+      min-width: max-content;
+      padding: 5px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 16px 42px rgb(35 53 77 / 0.14), 0 2px 8px rgb(35 53 77 / 0.06);
+      transform-origin: top right;
+      animation: select-in 160ms var(--ease-out);
+    }
+
+    .select-menu[hidden] { display: none; }
+
+    @keyframes select-in {
+      from { opacity: 0; transform: translateY(-4px) scale(0.985); }
+    }
+
+    .select-option {
+      display: flex;
+      width: 100%;
+      height: 34px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 9px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .select-option:hover,
+    .select-option:focus-visible { outline: 0; background: var(--surface-tinted); color: var(--text); }
+    .select-option[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-text); font-weight: 600; }
+    .select-option[aria-selected="true"]::after { content: ""; width: 5px; height: 9px; margin-right: 2px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-1px) rotate(45deg); }
 
     .topbar-context {
       margin-left: auto;
@@ -277,7 +349,7 @@
       box-shadow: 0 5px 14px rgb(49 93 184 / 0.16);
     }
 
-    .button-primary:hover { border-color: #294f9f; background: #294f9f; }
+    .button-primary:hover { border-color: #3f66c0; background: #3f66c0; }
 
     .metric-grid {
       display: grid;
@@ -292,7 +364,7 @@
       padding: 18px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: var(--shadow-panel);
     }
 
@@ -304,7 +376,7 @@
       color: var(--text-strong);
       font-size: 30px;
       line-height: 1;
-      font-weight: 700;
+      font-weight: 650;
       font-variant-numeric: tabular-nums;
     }
 
@@ -317,13 +389,13 @@
       font-size: 12px;
     }
 
-    .trend { color: var(--success); font-weight: 700; }
+    .trend { color: var(--success); font-weight: 650; }
     .trend-down { color: var(--danger); }
 
     .analytics-grid {
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(290px, 0.82fr);
-      gap: 16px;
+      gap: 18px;
       margin-bottom: 16px;
     }
 
@@ -331,7 +403,7 @@
       min-width: 0;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: var(--shadow-panel);
     }
 
@@ -345,14 +417,14 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .panel-head h2 { color: var(--text-strong); font-size: 15px; font-weight: 700; }
+    .panel-head h2 { color: var(--text-strong); font-size: 15px; font-weight: 650; }
     .panel-head p { margin-top: 4px; color: var(--text-muted); font-size: 12px; }
 
     .segmented {
       display: inline-flex;
       padding: 3px;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 9px;
       background: var(--surface-subtle);
     }
 
@@ -427,7 +499,7 @@
       gap: 8px;
     }
 
-    .table-tools select { padding: 0 30px 0 10px; }
+    .table-tools .custom-select { min-width: 150px; }
 
     .table-scroll { overflow-x: auto; }
 
@@ -480,7 +552,7 @@
     .dialog-close:hover { background: var(--surface-subtle); }
     .dialog-body { display: grid; gap: 16px; padding: 20px 18px; }
     .field { display: grid; gap: 7px; }
-    .field label { color: var(--text); font-size: 12px; font-weight: 650; }
+    .field label, .field-label { color: var(--text); font-size: 12px; font-weight: 600; }
     .dialog-actions { justify-content: flex-end; border-top: 1px solid var(--border); background: var(--surface-subtle); }
 
     .toast {
@@ -491,7 +563,7 @@
       max-width: min(380px, calc(100vw - 32px));
       padding: 12px 15px;
       border: 1px solid #d7e2ed;
-      border-radius: 8px;
+      border-radius: 10px;
       background: var(--surface);
       color: var(--text);
       box-shadow: 0 14px 34px rgb(35 52 74 / 0.14);
@@ -509,7 +581,7 @@
 
     @media (max-width: 1180px) {
       body { padding: 16px; }
-      .app-shell { grid-template-columns: 204px minmax(0, 1fr); min-height: calc(100vh - 32px); border-radius: 20px; }
+      .app-shell { grid-template-columns: 204px minmax(0, 1fr); min-height: calc(100vh - 32px); border-radius: 24px; }
       .workspace { padding: 22px; }
       .topbar { padding-inline: 22px; }
       .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -620,7 +692,18 @@
         <section class="panel table-panel" aria-labelledby="orders-title">
           <header class="panel-head">
             <div><h2 id="orders-title">Priority orders</h2><p>Orders requiring action in the next 24 hours</p></div>
-            <div class="table-tools"><input id="orderSearch" type="search" placeholder="Search priority orders" aria-label="Search priority orders"><select id="statusFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="Ready">Ready</option><option value="Review">Review</option><option value="Blocked">Blocked</option></select></div>
+            <div class="table-tools">
+              <input id="orderSearch" type="search" placeholder="Search priority orders" aria-label="Search priority orders">
+              <div class="custom-select" data-select>
+                <button class="select-trigger" id="statusFilter" type="button" data-value="all" aria-label="Filter by status" aria-haspopup="listbox" aria-expanded="false" aria-controls="statusFilterMenu"><span class="select-value">All statuses</span></button>
+                <div class="select-menu" id="statusFilterMenu" role="listbox" aria-label="Filter by status" hidden>
+                  <button class="select-option" type="button" role="option" aria-selected="true" data-value="all">All statuses</button>
+                  <button class="select-option" type="button" role="option" aria-selected="false" data-value="Ready">Ready</button>
+                  <button class="select-option" type="button" role="option" aria-selected="false" data-value="Review">Review</button>
+                  <button class="select-option" type="button" role="option" aria-selected="false" data-value="Blocked">Blocked</button>
+                </div>
+              </div>
+            </div>
           </header>
           <div class="table-scroll">
             <table>
@@ -634,12 +717,34 @@
   </div>
 
   <dialog id="transferDialog" aria-labelledby="transferTitle">
-    <form id="transferForm">
+    <form id="transferForm" novalidate>
       <header class="dialog-head"><h2 id="transferTitle">Create inventory transfer</h2><button type="button" class="dialog-close" id="closeDialog" aria-label="Close dialog">×</button></header>
       <div class="dialog-body">
-        <div class="field"><label for="fromLocation">From location</label><select id="fromLocation" required><option value="">Select a location</option><option>East warehouse</option><option>Central warehouse</option><option>West warehouse</option></select></div>
-        <div class="field"><label for="toLocation">To location</label><select id="toLocation" required><option value="">Select a location</option><option>Downtown store</option><option>North store</option><option>Airport store</option></select></div>
-        <div class="field"><label for="transferNote">Transfer reference</label><input id="transferNote" required placeholder="For example, seasonal replenishment"></div>
+        <div class="field">
+          <span class="field-label" id="fromLocationLabel">From location</span>
+          <div class="custom-select" data-select>
+            <button class="select-trigger" id="fromLocation" type="button" data-value="" aria-labelledby="fromLocationLabel fromLocationValue" aria-haspopup="listbox" aria-expanded="false" aria-controls="fromLocationMenu"><span class="select-value" id="fromLocationValue">Select a location</span></button>
+            <div class="select-menu" id="fromLocationMenu" role="listbox" aria-labelledby="fromLocationLabel" hidden>
+              <button class="select-option" type="button" role="option" aria-selected="true" data-value="">Select a location</button>
+              <button class="select-option" type="button" role="option" aria-selected="false" data-value="East warehouse">East warehouse</button>
+              <button class="select-option" type="button" role="option" aria-selected="false" data-value="Central warehouse">Central warehouse</button>
+              <button class="select-option" type="button" role="option" aria-selected="false" data-value="West warehouse">West warehouse</button>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label" id="toLocationLabel">To location</span>
+          <div class="custom-select" data-select>
+            <button class="select-trigger" id="toLocation" type="button" data-value="" aria-labelledby="toLocationLabel toLocationValue" aria-haspopup="listbox" aria-expanded="false" aria-controls="toLocationMenu"><span class="select-value" id="toLocationValue">Select a location</span></button>
+            <div class="select-menu" id="toLocationMenu" role="listbox" aria-labelledby="toLocationLabel" hidden>
+              <button class="select-option" type="button" role="option" aria-selected="true" data-value="">Select a location</button>
+              <button class="select-option" type="button" role="option" aria-selected="false" data-value="Downtown store">Downtown store</button>
+              <button class="select-option" type="button" role="option" aria-selected="false" data-value="North store">North store</button>
+              <button class="select-option" type="button" role="option" aria-selected="false" data-value="Airport store">Airport store</button>
+            </div>
+          </div>
+        </div>
+        <div class="field"><label for="transferNote">Transfer reference</label><input id="transferNote" placeholder="For example, seasonal replenishment"></div>
       </div>
       <footer class="dialog-actions"><button type="button" class="button" id="cancelDialog">Cancel</button><button type="submit" class="button button-primary">Create transfer</button></footer>
     </form>
@@ -667,6 +772,81 @@
     const toast = document.querySelector("#toast");
     let toastTimer;
 
+    const customSelects = [...document.querySelectorAll("[data-select]")];
+
+    function closeSelect(root, restoreFocus = false) {
+      const trigger = root.querySelector(".select-trigger");
+      const menu = root.querySelector(".select-menu");
+      menu.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+      if (restoreFocus) trigger.focus();
+    }
+
+    function closeAllSelects() {
+      customSelects.forEach((root) => closeSelect(root));
+    }
+
+    function openSelect(root, focusSelected = true) {
+      customSelects.forEach((item) => {
+        if (item !== root) closeSelect(item);
+      });
+      const trigger = root.querySelector(".select-trigger");
+      const menu = root.querySelector(".select-menu");
+      menu.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      if (focusSelected) requestAnimationFrame(() => (menu.querySelector('[aria-selected="true"]') || menu.querySelector(".select-option"))?.focus());
+    }
+
+    function chooseOption(root, option, restoreFocus = true) {
+      const trigger = root.querySelector(".select-trigger");
+      root.querySelectorAll(".select-option").forEach((item) => item.setAttribute("aria-selected", String(item === option)));
+      trigger.querySelector(".select-value").textContent = option.textContent.trim();
+      trigger.dataset.value = option.dataset.value;
+      trigger.dispatchEvent(new CustomEvent("change", { detail: { value: option.dataset.value } }));
+      closeSelect(root, restoreFocus);
+    }
+
+    function resetSelect(triggerId) {
+      const trigger = document.querySelector(`#${triggerId}`);
+      const root = trigger.closest("[data-select]");
+      chooseOption(root, root.querySelector(".select-option"), false);
+    }
+
+    customSelects.forEach((root) => {
+      const trigger = root.querySelector(".select-trigger");
+      const menu = root.querySelector(".select-menu");
+      const options = [...root.querySelectorAll(".select-option")];
+
+      trigger.addEventListener("click", () => menu.hidden ? openSelect(root) : closeSelect(root, true));
+      trigger.addEventListener("keydown", (event) => {
+        if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+        event.preventDefault();
+        openSelect(root, false);
+        const selected = Math.max(0, options.findIndex((option) => option.getAttribute("aria-selected") === "true"));
+        const next = event.key === "End" ? options.length - 1 : event.key === "Home" ? 0 : event.key === "ArrowUp" ? (selected - 1 + options.length) % options.length : (selected + 1) % options.length;
+        requestAnimationFrame(() => options[next].focus());
+      });
+      menu.addEventListener("keydown", (event) => {
+        const current = options.indexOf(document.activeElement);
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeSelect(root, true);
+          return;
+        }
+        if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === "End" ? options.length - 1 : event.key === "Home" ? 0 : event.key === "ArrowUp" ? (current - 1 + options.length) % options.length : (current + 1) % options.length;
+        options[next].focus();
+      });
+      options.forEach((option) => option.addEventListener("click", () => chooseOption(root, option)));
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+      customSelects.forEach((root) => {
+        if (!root.contains(event.target)) closeSelect(root);
+      });
+    });
+
     function showToast(message) {
       toast.textContent = message;
       toast.dataset.visible = "true";
@@ -676,7 +856,7 @@
 
     function renderOrders() {
       const query = orderSearch.value.trim().toLowerCase();
-      const status = statusFilter.value;
+      const status = statusFilter.dataset.value;
       const filtered = orders.filter((order) => {
         const matchesQuery = `${order.id} ${order.customer} ${order.location}`.toLowerCase().includes(query);
         return matchesQuery && (status === "all" || order.status === status);
@@ -751,13 +931,34 @@
     });
 
     const transferDialog = document.querySelector("#transferDialog");
-    document.querySelector("#createButton").addEventListener("click", () => transferDialog.showModal());
-    document.querySelector("#closeDialog").addEventListener("click", () => transferDialog.close());
-    document.querySelector("#cancelDialog").addEventListener("click", () => transferDialog.close());
+    document.querySelector("#createButton").addEventListener("click", () => {
+      closeAllSelects();
+      transferDialog.showModal();
+    });
+    document.querySelector("#closeDialog").addEventListener("click", () => {
+      closeAllSelects();
+      transferDialog.close();
+    });
+    document.querySelector("#cancelDialog").addEventListener("click", () => {
+      closeAllSelects();
+      transferDialog.close();
+    });
     document.querySelector("#transferForm").addEventListener("submit", (event) => {
       event.preventDefault();
+      const fromLocation = document.querySelector("#fromLocation");
+      const toLocation = document.querySelector("#toLocation");
+      const transferNote = document.querySelector("#transferNote");
+      if (!fromLocation.dataset.value || !toLocation.dataset.value || !transferNote.value.trim()) {
+        const missing = !fromLocation.dataset.value ? fromLocation : !toLocation.dataset.value ? toLocation : transferNote;
+        showToast("Complete all transfer details");
+        missing.focus();
+        return;
+      }
+      closeAllSelects();
       transferDialog.close();
       event.currentTarget.reset();
+      resetSelect("fromLocation");
+      resetSelect("toLocation");
       showToast("Inventory transfer created");
     });
 

@@ -2,6 +2,19 @@
 
 This is the default blue-and-white visual language for the skill. It is a self-contained specification: bright, operational, data-first, and lightly layered. Apply it across projects and page functions without copying any one interface literally. Preserve an intentional existing brand, but do not invent a different aesthetic for every project.
 
+## Visual Calibration Assets
+
+The optional images in `assets/reference-blue-white-dashboard-01.png` and `assets/reference-blue-white-dashboard-02.png` define the finish target, not a page template. When visual comparison is warranted, inspect:
+
+- cool blue-gray outside the application and white or near-white inside it;
+- large outer-shell curvature paired with smaller, related panel and control radii;
+- light card borders, broad low-opacity shadows, and generous separation instead of heavy elevation;
+- medium-weight interface typography with stronger emphasis reserved for key values;
+- blue concentrated in selected navigation, one primary action, and high-value data marks;
+- small outline icons with consistent stroke weight and restrained containers.
+
+Ignore the sample brands, metrics, charts, navigation labels, and finance/dashboard structure. Derive those from the user's product.
+
 ## Stable Style And Controlled Variation
 
 Keep these characteristics stable unless the user explicitly requests another direction:
@@ -24,7 +37,7 @@ Do not interpret variation as permission to randomly change the palette, inflate
 
 ## Visual DNA
 
-- Soft blue-gray canvas behind high-clarity white surfaces.
+- A cool blue-gray exterior frame may surround the product, while the application interior stays white or near-white. Do not flood the working canvas with visible blue-gray.
 - Near-black text, restrained gray metadata, and one dominant functional accent.
 - Blue used for primary actions, selection, focus, and the leading data series. Cyan, teal, and other hues remain secondary or semantic.
 - A stable sidebar or compact top navigation for product areas; a top toolbar for search, date range, filters, account, and page actions.
@@ -38,26 +51,26 @@ Use semantic names. These values are the house defaults, not mandatory replaceme
 
 ```css
 :root {
-  --canvas: #f1f5f9;
-  --canvas-strong: #dce6f0;
+  --canvas: #f6f8fb;
+  --canvas-strong: #d8e4ec;
   --surface: #ffffff;
-  --surface-subtle: #f9fbfd;
-  --surface-tinted: #f2f6ff;
+  --surface-subtle: #fafcfe;
+  --surface-tinted: #f4f7ff;
 
   --text: #2b3445;
   --text-strong: #172033;
   --text-muted: #6b7689;
   --text-faint: #9aa6b7;
 
-  --border: #e6ecf2;
-  --border-strong: #d4dee9;
+  --border: #e8edf3;
+  --border-strong: #dbe3ec;
 
-  --accent: #5b82e9;
-  --accent-hover: #4f76df;
-  --accent-active: #4168ce;
-  --accent-text: #315db8;
-  --accent-action: #315db8;
-  --accent-soft: #e6eeff;
+  --accent: #6a90ea;
+  --accent-hover: #5c83df;
+  --accent-active: #4f76d5;
+  --accent-text: #3a64b9;
+  --accent-action: #4772d1;
+  --accent-soft: #eaf0ff;
   --accent-subtle: #f4f7ff;
   --chart-blue: #75a0f3;
   --chart-blue-soft: #c7d8fa;
@@ -74,7 +87,7 @@ Use semantic names. These values are the house defaults, not mandatory replaceme
 
 ### Color discipline
 
-- Let white and blue-gray neutral surfaces occupy roughly 80-90% of a productivity interface.
+- Let white and near-white surfaces occupy roughly 85-95% of a productivity interface. Concentrate the cooler blue-gray on the exterior frame, separators, or selected regions.
 - Use the medium blue `--accent` for leading data, selection fills, focus rings, and non-text decoration. Use `--accent-text` for links and blue text so contrast remains accessible.
 - Reserve the deeper `--accent-action` for small primary buttons that need white text. Do not fill large page regions with it.
 - Use lighter blue tints for navigation selection and card emphasis. Use cyan or teal only for supporting data series or a distinct semantic category; they must not compete with blue for primary-action emphasis.
@@ -89,14 +102,14 @@ Use a radius hierarchy instead of applying the same large radius everywhere.
 
 | Element | Default radius | Notes |
 |---|---:|---|
-| App frame shown inside a marketing mockup | 24-28 px | Presentation only; a full-viewport product shell normally has no outer radius |
-| Dialog or large bounded tool | 12 px | Use only when it is genuinely framed |
-| Standard card or chart panel | 8 px | Primary internal card radius |
-| Input, button, select, compact popover | 6-8 px | Keep dense controls precise |
-| Tooltip and small menu | 6 px | Compact and anchored |
+| App frame shown inside a marketing mockup | 28-32 px | Presentation only; a full-viewport product shell normally has no outer radius |
+| Dialog or large bounded tool | 12-14 px | Use only when it is genuinely framed |
+| Standard card or chart panel | 10-12 px | Reference-style internal panel radius |
+| Input, button, select trigger | 8-10 px | Keep controls softer than generic browser defaults |
+| Tooltip, menu, and popover | 10-12 px | Match the trigger family while preserving anchored geometry |
 | Status chip, segmented selection, avatar | 999 px | Only for semantically pill-shaped elements |
 
-- Dense enterprise and operational tools should normally keep internal cards at 6-8 px. A consumer, media, or visually browsed product may use 10-12 px cards when that softness supports its character. Do not change radius merely to make a page feel redesigned.
+- Dense enterprise and operational tools should normally keep internal cards at 8-10 px. General product panels can use 10-12 px; consumer or media products may reach 12-14 px when that softness supports their character. Do not change radius merely to make a page feel redesigned.
 - Do not nest visually rounded cards inside rounded cards. Use dividers, headings, or a grid inside a parent surface.
 - Do not use pills for ordinary navigation, labels, or every button.
 - Align neighboring radii and insets. Inner controls should usually be equal to or slightly less rounded than their container and must not visually collide with the parent's curvature.
@@ -150,12 +163,12 @@ Default surface treatment:
 .panel {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.025), 0 10px 28px rgb(38 58 84 / 0.018);
 }
 ```
 
-- Prefer a border with either no shadow or one subtle shadow.
+- Prefer a faint border with either no shadow or a broad, very low-opacity shadow. Strong card outlines make the page feel assembled rather than integrated.
 - Use stronger elevation only for temporary overlays such as menus, popovers, and dialogs.
 - Avoid glow, bokeh, decorative gradient blobs, heavy blur, or uniformly tinted pages.
 - Backdrop blur may support transient chrome but must not reduce text contrast or become the dominant style.
@@ -164,12 +177,13 @@ Default surface treatment:
 
 - Prefer the project's font. Otherwise use Inter, Geist, or a system sans stack.
 - Keep letter spacing at `0` for ordinary interface text.
-- Page title: 24-30 px, 600-700 weight.
-- Section title: 16-20 px, 600 weight.
-- Card title: 13-15 px, 600 weight.
+- Page title: 24-30 px, usually 600-650 weight.
+- Section title: 16-20 px, 550-650 weight.
+- Card title: 13-15 px, 550-650 weight.
 - Body and table text: 13-15 px, 400-500 weight.
 - Metadata: 11-13 px, muted but still readable.
-- KPI: 28-38 px, 600-700 weight, `font-variant-numeric: tabular-nums`.
+- KPI: 28-38 px, 550-650 weight, `font-variant-numeric: tabular-nums`.
+- Avoid using 700+ throughout the interface. Reserve the strongest weight for the brand, a single critical value, or rare emphasis; reference-quality layouts feel confident because hierarchy is controlled, not because every heading is bold.
 - Use sentence case. Avoid excessive uppercase; reserve it for very small category labels when the product already uses that convention.
 - Never scale type with viewport width. Use stable responsive steps and ensure long labels wrap or truncate intentionally.
 
@@ -218,6 +232,14 @@ Default surface treatment:
 - Keep help text and validation adjacent to the field.
 - Use a single clear submit action and preserve user input after validation failures.
 - Do not place each field inside its own card.
+
+### Selects, menus, and floating controls
+
+- Inspect controls both closed and open. A rounded select trigger with a square operating-system popup is not a visually complete result.
+- Use the project's accessible popover or select primitive when available. In plain HTML, keep the native `<select>` when platform consistency is acceptable; when the visual brief requires a coordinated popup, implement a real accessible listbox/combobox with a button trigger, `aria-expanded`, keyboard navigation, Escape handling, outside-click dismissal, focus return, and selected-state semantics.
+- Match trigger, popup, and option radii as a family: roughly 8-10 px trigger, 10-12 px popup, and 7-8 px option for this reference style.
+- Give floating menus a white surface, one faint border, and a broad low-opacity shadow. Avoid sharp corners, heavy black shadows, or a menu that is visually darker than its trigger.
+- Make dropdown arrows point down when closed and up when open. Keep them in the same stroke family and optical weight as the rest of the interface.
 
 ## Iconography
 

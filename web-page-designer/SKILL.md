@@ -15,6 +15,7 @@ Create working web interfaces that feel calm, precise, and ready for repeated pr
 - Read [references/framework-implementation.md](references/framework-implementation.md) before implementing in React, Vue, or plain HTML/CSS.
 - Read [references/quality-gates.md](references/quality-gates.md) before final verification or when reviewing an existing interface.
 - Use [examples/blue-white-operations-dashboard.html](examples/blue-white-operations-dashboard.html) only as a visual calibration sample when the project has no established brand. Do not copy its dashboard structure into unrelated workflows.
+- Inspect the images in `assets/reference-blue-white-dashboard-01.png` and `assets/reference-blue-white-dashboard-02.png` when the user requests reference-level polish or when the first visual pass drifts from the intended finish. Study surface balance, type weight, radius, spacing, icon treatment, and accent distribution; never copy their finance/dashboard information architecture into an unrelated product.
 
 ## Design Position
 
@@ -120,9 +121,9 @@ Use full-width bands or unframed layouts for page sections. Reserve cards for re
 Do not stop at the first coherent render. Run focused passes:
 
 1. **Structure:** task order, navigation, content priority, density, and responsive collapse.
-2. **Optical detail:** alignment, padding, radius relationships, border value, shadow softness, type scale, and numeric rhythm.
+2. **Optical detail:** alignment, padding, radius relationships, border value, shadow softness, type scale, font weight, numeric rhythm, and the relationship between the outer frame and inner canvas.
 3. **Iconography:** family consistency, size, stroke weight, color, container, spacing, and optical centering.
-4. **Interaction:** hover, focus, active, selected, loading, empty, error, overlay, and reduced-motion behavior.
+4. **Interaction:** hover, focus, active, selected, loading, empty, error, open dropdown/menu/date-picker surfaces, overlay, and reduced-motion behavior.
 5. **Visual comparison:** inspect screenshots at target widths, identify the three most visible weaknesses, correct them, and repeat until another pass would produce only marginal improvement.
 
 Keep changes small and intentional between passes. Do not compensate for weak hierarchy with stronger color, more cards, deeper shadows, larger radii, or extra icons.
@@ -136,6 +137,7 @@ Use the available browser or visual testing tools when possible. Check the real 
 - no overlap, clipped text, accidental horizontal scrolling, layout shift, or blank chart/canvas;
 - keyboard navigation, visible focus, accessible names, contrast, and reduced motion;
 - working interactions and a clean browser console.
+- at least one open popover, dropdown, menu, dialog, or tooltip state when the page contains overlays.
 
 Iterate on the implementation until the applicable gates in `quality-gates.md` pass. Report the route or file, the main design decisions, and what was verified.
 

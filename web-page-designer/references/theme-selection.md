@@ -32,7 +32,7 @@ These are reasoning anchors, not templates:
 
 | Direction | Strong fit | Character and constraints |
 |---|---|---|
-| Refined blue-and-white | General SaaS, analytics, operations, finance, enterprise workflows | Bright white surfaces, soft blue-gray canvas, medium blue emphasis, restrained elevation; use when no stronger direction exists |
+| Refined blue-and-white | General SaaS, analytics, operations, finance, enterprise workflows | Cool blue-gray exterior, white or near-white working canvas, soft medium-blue emphasis, restrained elevation; use when no stronger direction exists |
 | Graphite-neutral with cool accents | Developer tools, security, infrastructure, dense monitoring | Neutral graphite text and dividers with limited cool accents; do not turn the whole product into dark slate unless the environment supports dark mode |
 | Content-led white | Commerce, portfolios, media libraries, catalog tools | Keep chrome quiet so product imagery or user content owns color; accents come from brand and actions, not decorative panels |
 | Soft clinical | Healthcare, education, wellness, careful guided workflows | Airier spacing, calm blue or blue-green support colors, direct labels, low visual stress; avoid childish pastels and vague iconography |
@@ -46,10 +46,12 @@ Do not choose a direction from industry stereotypes alone. A playful finance edu
 Before implementation, define the relationships, not merely hex values:
 
 - canvas versus surface separation;
+- exterior presentation frame versus the application working canvas;
 - primary, secondary, muted, and inverse text;
 - primary action, active selection, links, focus, and data-series emphasis;
 - success, warning, danger, and information semantics;
 - border strength, elevation, overlay tint, and disabled treatment;
+- closed-control and open-popup geometry, shadow, focus, and selected treatment;
 - typography character and density;
 - radius family for shell, panels, controls, menus, and pills;
 - icon family, stroke or fill style, size, color, and containers;
