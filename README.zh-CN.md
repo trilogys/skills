@@ -34,22 +34,29 @@ mentor_level=L1
 
 [`web-page-designer`](web-page-designer/SKILL.md) 用于设计、实现、重构或评审 React、Vue、原生 HTML/CSS 以及其他 Web 技术栈中的专业桌面优先页面。
 
-它是一套设计系统和决策流程，不是固定的仪表盘模板。数据分析、CRM、电商、设置、列表、详情和表单等命名模式只是示例。面对未列出的功能时，skill 会根据产品对象、操作、使用频率、信息层级、工作形态和状态重新推导布局。
+它是一套设计系统和决策流程，不是固定的仪表盘模板。它会根据产品、用户、品牌、内容和使用环境推荐主题；没有明确方向时默认使用精致的蓝白主题。数据分析、CRM、电商、设置、列表、详情和表单等命名模式只是示例。面对未列出的功能时，skill 会根据产品对象、操作、使用频率、信息层级、工作形态和状态重新推导布局。
 
-稳定的设计语言强调：
+设计流程强调：
 
-- 冷色中性画布、白色表面、近黑正文和克制的功能强调色；
-- 4 px 间距基础和有层级的圆角体系；
-- 轻边框、极弱阴影，仅在内容确实有边界或需要比较时使用卡片；
-- 适合桌面工作的内容密度、可预测导航、可读数据和完整交互状态；
-- 300 ms 以内的功能性动画、减少动态效果支持，以及多视口视觉检查。
+- 根据产品、用户、品牌、内容、使用环境和操作频率选择主题；
+- 没有明确方向时，使用“冷蓝灰外框 + 白色或近白工作画布”的精致蓝白主题；
+- 采用 4 px 间距基础和协调的圆角家族：展示外框 28-32 px、产品面板 10-12 px、控件 8-10 px、浮层菜单 10-12 px；
+- 使用中等字重的界面字体、等宽数字节奏、克制蓝色、浅边框和大范围低透明阴影；
+- 使用同一套线性图标，统一尺寸、线宽、颜色、容器和光学校准；
+- 只在内容确实有边界或需要比较时使用卡片，页面拓扑始终根据真实工作流推导；
+- 使用 300 ms 以内的功能性动画、完整交互状态、减少动态效果支持和多轮截图修正。
 
 包内文档包括：
 
 - [视觉基础](web-page-designer/references/visual-foundation.md)：色彩、排版、圆角、间距、布局、表面、卡片、图表、表格、表单和动画；
+- [主题选择](web-page-designer/references/theme-selection.md)：主题优先级、项目适配信号、一致性调整和主题残留审计；
 - [页面模式](web-page-designer/references/page-patterns.md)：结构示例，以及为任意功能推导布局的方法；
-- [框架实现](web-page-designer/references/framework-implementation.md)：React、Vue、HTML/CSS、其他 Web 技术栈、无障碍、响应式行为和组件库选择；
-- [质量门槛](web-page-designer/references/quality-gates.md)：产品、布局、视觉、交互、无障碍和截图检查。
+- [框架实现](web-page-designer/references/framework-implementation.md)：React、Vue、HTML/CSS、可访问浮层控件、响应式行为和组件库选择；
+- [质量门槛](web-page-designer/references/quality-gates.md)：产品、布局、字体、图标、展开态浮层、无障碍和截图检查；
+- [HTML 校准 Demo](web-page-designer/examples/blue-white-operations-dashboard.html)：包含圆角可访问下拉、筛选、图表、弹窗状态和响应式布局的交互式蓝白运营页面；
+- [视觉参考资产](web-page-designer/assets/NOTICE.md)：两张用户提供的截图，仅用于校准质感，不作为可复用品牌或页面模板。
+
+该 skill 会检查控件的展开状态，而不只检查收起外观。当操作系统原生下拉菜单与整体视觉规范冲突时，它要求使用成熟的可访问组件，或实现完整的按钮/Listbox 模式，包括键盘导航、Escape 关闭、点击外部关闭、选中语义和焦点归还。
 
 开始使用：
 
@@ -121,6 +128,8 @@ skills/
 └── web-page-designer/
     ├── SKILL.md
     ├── agents/
+    ├── assets/
+    ├── examples/
     └── references/
 ```
 
@@ -134,4 +143,4 @@ skills/
 
 ## 许可证
 
-项目采用 [Apache License 2.0](LICENSE)。
+项目采用 [Apache License 2.0](LICENSE)。用户提供的第三方视觉参考截图按[资产说明](web-page-designer/assets/NOTICE.md)排除在该许可证之外。

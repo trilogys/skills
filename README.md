@@ -34,22 +34,29 @@ Documentation: [overview](ai-coding-mentor/README.md) | [installation](ai-coding
 
 [`web-page-designer`](web-page-designer/SKILL.md) designs, implements, redesigns, or reviews polished desktop-first web pages in React, Vue, plain HTML/CSS, and comparable web stacks.
 
-It is a design system and decision workflow rather than a fixed dashboard template. Named patterns such as analytics, CRM, commerce, settings, lists, details, and forms are examples. For any unlisted function, the skill derives a layout from the product's objects, actions, frequency, information hierarchy, working shape, and states.
+It is a design system and decision workflow rather than a fixed dashboard template. It recommends a theme from the product, audience, brand, content, and usage context, with refined blue-and-white as the default when no direction exists. Named patterns such as analytics, CRM, commerce, settings, lists, details, and forms are examples. For any unlisted function, the skill derives a layout from the product's objects, actions, frequency, information hierarchy, working shape, and states.
 
-The stable design language emphasizes:
+The design process emphasizes:
 
-- cool neutral canvases, white surfaces, near-black text, and restrained functional accents;
-- a 4 px spacing foundation and a deliberate radius hierarchy;
-- light borders, minimal elevation, and cards only where content is genuinely bounded or comparable;
-- desktop information density, predictable navigation, readable data, and complete interaction states;
-- purposeful motion under 300 ms, reduced-motion support, and visual verification at multiple viewport sizes.
+- theme selection from the product, audience, brand, content, environment, and action frequency;
+- a refined blue-and-white fallback with a cool exterior frame and a white or near-white working canvas;
+- a 4 px spacing foundation and a coordinated radius family: 28-32 px presentation shells, 10-12 px product panels, 8-10 px controls, and 10-12 px floating menus;
+- medium-weight interface typography, tabular numeric rhythm, restrained blue emphasis, faint borders, and broad low-opacity shadows;
+- one coherent outline icon family with controlled size, stroke, color, container, and optical alignment;
+- cards only where content is genuinely bounded or comparable, while every page topology follows the real workflow;
+- purposeful motion under 300 ms, complete interaction states, reduced-motion support, and iterative screenshot refinement.
 
 The package includes separate guidance for:
 
 - [visual foundation](web-page-designer/references/visual-foundation.md): color, typography, radius, spacing, layout, surfaces, cards, charts, tables, forms, and motion;
+- [theme selection](web-page-designer/references/theme-selection.md): theme precedence, product-fit signals, coherent adaptation, and theme-change audits;
 - [page patterns](web-page-designer/references/page-patterns.md): example structures plus a method for deriving layouts for any function;
-- [framework implementation](web-page-designer/references/framework-implementation.md): React, Vue, HTML/CSS, other web stacks, accessibility, responsive behavior, and library choices;
-- [quality gates](web-page-designer/references/quality-gates.md): product, layout, visual, interaction, accessibility, and screenshot checks.
+- [framework implementation](web-page-designer/references/framework-implementation.md): React, Vue, HTML/CSS, accessible floating controls, responsive behavior, and library choices;
+- [quality gates](web-page-designer/references/quality-gates.md): product, layout, typography, icons, open overlays, accessibility, and screenshot checks;
+- [HTML calibration demo](web-page-designer/examples/blue-white-operations-dashboard.html): an interactive blue-and-white operations page with rounded accessible listboxes, filters, charts, dialog states, and responsive layouts;
+- [visual reference assets](web-page-designer/assets/NOTICE.md): two supplied screenshots used only to calibrate finish, not as reusable brands or page templates.
+
+The skill checks controls while they are open, not only in their closed state. When native operating-system select popups conflict with a coordinated visual brief, it requires a proven accessible primitive or a complete button/listbox implementation with keyboard navigation, Escape handling, outside-click dismissal, selected semantics, and focus return.
 
 Start with:
 
@@ -121,6 +128,8 @@ skills/
 └── web-page-designer/
     ├── SKILL.md
     ├── agents/
+    ├── assets/
+    ├── examples/
     └── references/
 ```
 
@@ -134,4 +143,4 @@ skills/
 
 ## License
 
-Licensed under the [Apache License 2.0](LICENSE).
+Licensed under the [Apache License 2.0](LICENSE). Supplied third-party visual reference screenshots are excluded as described in [their asset notice](web-page-designer/assets/NOTICE.md).

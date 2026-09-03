@@ -65,6 +65,7 @@ Useful choices when no equivalent exists:
 - Use CSS custom properties for tokens and CSS Grid/Flexbox for layout.
 - Use small ES modules for interaction; avoid introducing a framework for one page.
 - Use native controls where possible and preserve expected keyboard behavior.
+- Native select popups cannot be styled consistently across operating systems. When the visual brief requires a coordinated rounded popup, use a proven accessible primitive or implement the full button/listbox pattern; do not replace `<select>` with an inert styled `<div>`.
 - Keep a self-contained prototype in one HTML file only when there is no existing application or build pipeline.
 - For production code, separate structure, styles, and behavior according to the existing project conventions.
 
@@ -107,6 +108,7 @@ Never solve responsiveness by shrinking the whole interface, reducing text below
 - Use one `h1` and a logical heading hierarchy.
 - Provide `main`, navigation, header, complementary, form, table, and dialog semantics as appropriate.
 - Ensure every control has an accessible name and visible focus indication.
+- Custom selects, menus, and popovers support Arrow keys, Enter/Space, Escape, outside click, selected semantics, and focus return.
 - Keep focus inside modal dialogs and return it to the trigger when they close.
 - Support keyboard operation for menus, tabs, tables, filters, and custom controls.
 - Pair status color with text or an icon and announce meaningful asynchronous changes appropriately.
