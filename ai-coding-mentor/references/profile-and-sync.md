@@ -77,7 +77,7 @@ Treat these as legacy project evidence.
 Rules:
 
 1. never delete, rename, or overwrite them automatically;
-2. initialize the V3 files alongside them;
+2. initialize the current files alongside them;
 3. read the legacy files on the first `/profile`;
 4. preserve supported levels but reassess confidence and ownership;
 5. copy only generalized, non-sensitive conclusions into global state;

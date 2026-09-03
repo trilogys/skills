@@ -7,13 +7,13 @@ Keep one canonical copy of the Skill and one separate global profile.
 For Codex, Kilo Code, and OpenCode, the common user-level Skill location is:
 
 ```text
-~/.agents/skills/ai-coding-mentor-v3/
+~/.agents/skills/ai-coding-mentor/
 ```
 
 Claude Code uses:
 
 ```text
-~/.claude/skills/ai-coding-mentor-v3/
+~/.claude/skills/ai-coding-mentor/
 ```
 
 On macOS/Linux, the Claude directory can be a symlink to the canonical `.agents` copy. On Windows, copying the complete folder to both locations is usually simpler unless symbolic links are already enabled.
@@ -33,20 +33,20 @@ The shared `.agents/skills` location minimizes duplicate installation for Codex,
 
 ## Windows example
 
-Extract the ZIP, then copy the top-level `ai-coding-mentor-v3` folder to:
+Extract the ZIP, then copy the top-level `ai-coding-mentor` folder to:
 
 ```text
-C:\Users\<your-user>\.agents\skills\ai-coding-mentor-v3\
-C:\Users\<your-user>\.claude\skills\ai-coding-mentor-v3\
+C:\Users\<your-user>\.agents\skills\ai-coding-mentor\
+C:\Users\<your-user>\.claude\skills\ai-coding-mentor\
 ```
 
 Kilo can alternatively use:
 
 ```text
-C:\Users\<your-user>\.kilo\skills\ai-coding-mentor-v3\
+C:\Users\<your-user>\.kilo\skills\ai-coding-mentor\
 ```
 
-Restart the CLI if the Skill does not appear after installation. In Codex, list or invoke it with `/skills` or `$ai-coding-mentor-v3`. In Claude Code it is available as a Skill command. Other clients can select it implicitly from the description or by name.
+Restart the CLI if the Skill does not appear after installation. In Codex, list or invoke it with `/skills` or `$ai-coding-mentor`. In Claude Code it is available as a Skill command. Other clients can select it implicitly from the description or by name.
 
 ## Initialize shared state
 
@@ -75,16 +75,16 @@ Then set `AI_MENTOR_HOME` to the same location for every local CLI. The profile 
 ## Recommended first request
 
 ```text
-Use ai-coding-mentor-v3.
+Use ai-coding-mentor.
 /profile
 
-Initialize or review my V3 profile. If V2 project profile files exist, preserve them and migrate only generalized evidence. Do not infer mastery from AI-generated code.
+Initialize or review my mentor profile. If V2 project profile files exist, preserve them and migrate only generalized evidence. Do not infer mastery from AI-generated code.
 ```
 
 For everyday work:
 
 ```text
-Use ai-coding-mentor-v3.
+Use ai-coding-mentor.
 /normal
 mentor_level=L1
 
@@ -114,9 +114,9 @@ The importer writes only to a new `imports/<timestamp>/` directory. Run `/profil
 
 ## Existing V2 project
 
-Run the V3 initializer in the existing repository. It will preserve V2's `CAPABILITY_PROFILE.md` and `SKILL_MATRIX.md` and create V3 files beside them.
+Run the initializer in the existing repository. It will preserve V2's `CAPABILITY_PROFILE.md` and `SKILL_MATRIX.md` and create the current files beside them.
 
-Do not delete V2 files until you have reviewed the first V3 `/profile` result and confirmed the evidence was retained.
+Do not delete V2 files until you have reviewed the first `/profile` result and confirmed the evidence was retained.
 
 ## Official format and client references
 

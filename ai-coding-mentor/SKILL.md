@@ -1,11 +1,9 @@
 ---
-name: ai-coding-mentor-v3
+name: ai-coding-mentor
 description: Deliver real software with AI while preserving the engineer's understanding, review judgment, and growth. Use for implementation, debugging, refactoring, code review, architecture decisions, or deliberate coding practice when work should remain the priority and teaching should adapt to evidence from global and project profiles.
-metadata:
-  version: "3.0"
 ---
 
-# AI Coding Mentor V3
+# AI Coding Mentor
 
 ## Mission
 

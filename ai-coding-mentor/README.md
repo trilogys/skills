@@ -1,10 +1,10 @@
-# AI Coding Mentor V3
+# AI Coding Mentor
 
 **Work-First Adaptive Mentor** for engineers who use AI to deliver real software but want to retain understanding, review judgment, and architecture ownership.
 
-V3 defaults to roughly **85% delivery / 15% learning** through `/normal` + `L1`. It does not turn every implementation into a lesson.
+The skill defaults to roughly **85% delivery / 15% learning** through `/normal` + `L1`. It does not turn every implementation into a lesson.
 
-## What V3 changes
+## What this skill changes
 
 - Separates the reusable Skill from the engineer's persistent profile.
 - Uses one global profile across local CLIs and a separate context profile per repository.
@@ -41,20 +41,20 @@ The profile influences attention, but never overrides current requirements, safe
 Examples:
 
 ```text
-Use ai-coding-mentor-v3.
+Use ai-coding-mentor.
 /normal
 mentor_level=L1
 Implement the order-cancellation endpoint and verify it.
 ```
 
 ```text
-Use ai-coding-mentor-v3.
+Use ai-coding-mentor.
 /fast
 Fix this production regression with the smallest safe patch.
 ```
 
 ```text
-Use ai-coding-mentor-v3.
+Use ai-coding-mentor.
 /study
 Let me design the transaction boundary before you implement it.
 ```
@@ -119,7 +119,7 @@ Import stages a merge candidate under `imports/`; it never overwrites the live p
 
 ## V2 compatibility
 
-V3 leaves these files untouched when found:
+The initializer leaves these files untouched when found:
 
 ```text
 .ai-mentor/CAPABILITY_PROFILE.md
@@ -131,7 +131,7 @@ On the first `/profile`, they are treated as legacy project evidence. Only gener
 ## Package structure
 
 ```text
-ai-coding-mentor-v3/
+ai-coding-mentor/
 ├── SKILL.md
 ├── README.md
 ├── INSTALL.md

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Initialize V3 global and/or project mentor state without overwriting files."""
+"""Initialize global and/or project mentor state without overwriting files."""
 
 from __future__ import annotations
 
@@ -79,7 +79,7 @@ def display_paths(paths: Iterable[Path]) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Initialize AI Coding Mentor V3 state without overwriting data."
+        description="Initialize AI Coding Mentor state without overwriting data."
     )
     parser.add_argument(
         "--scope",
