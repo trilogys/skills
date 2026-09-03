@@ -96,9 +96,10 @@ Use a radius hierarchy instead of applying the same large radius everywhere.
 | Tooltip and small menu | 6 px | Compact and anchored |
 | Status chip, segmented selection, avatar | 999 px | Only for semantically pill-shaped elements |
 
+- Dense enterprise and operational tools should normally keep internal cards at 6-8 px. A consumer, media, or visually browsed product may use 10-12 px cards when that softness supports its character. Do not change radius merely to make a page feel redesigned.
 - Do not nest visually rounded cards inside rounded cards. Use dividers, headings, or a grid inside a parent surface.
 - Do not use pills for ordinary navigation, labels, or every button.
-- Align neighboring radii and insets. An inner element should not visually collide with the parent's curvature.
+- Align neighboring radii and insets. Inner controls should usually be equal to or slightly less rounded than their container and must not visually collide with the parent's curvature.
 
 ## Spacing And Density
 
@@ -132,6 +133,7 @@ Baseline for a 1440 px viewport:
 - Grid: 12 columns, 20-24 px gaps.
 - Primary analysis area: 8 columns plus a 4-column support panel, or full width when the task requires comparison.
 - KPI row: usually 3-4 equal columns; do not shrink metrics until labels wrap incoherently.
+- Keep the theme recognizable across different topologies, but derive topology from work. An editor may need canvas plus inspector, a mailbox may need three panes, and a scheduler may need a time grid; none should inherit a dashboard layout merely to preserve visual consistency.
 
 Responsive behavior:
 
@@ -216,6 +218,21 @@ Default surface treatment:
 - Keep help text and validation adjacent to the field.
 - Use a single clear submit action and preserve user input after validation failures.
 - Do not place each field inside its own card.
+
+## Iconography
+
+Icons are part of the theme, not decoration added after layout.
+
+- Reuse the project's established icon family. If none exists, use one coherent library such as Lucide and keep its default stroke character unless the product has a reason to tune it globally.
+- Never mix outline, filled, duotone, emoji, and hand-drawn icons in the same functional layer.
+- Use icons only when they improve recognition, scanning, or space efficiency. A small icon beside every label adds noise rather than quality.
+- Prefer 16-18 px icons in 32-36 px desktop controls, 14-16 px in dense table actions, and 20-24 px only for visually important standalone actions or empty states.
+- Keep icon-and-label gaps around 8 px. Center icons optically, not only mathematically; chevrons, play symbols, and asymmetric marks often need a 1 px correction.
+- Let icons inherit text color. Use `--accent-text` for active blue icons and semantic colors only when the icon communicates that status.
+- Use a 28-32 px icon container with a 6-8 px radius only when grouping or hit area requires it. Do not put every icon in a colored circle or rounded square.
+- Keep stroke weight, cap style, corner character, and visual size consistent across navigation, toolbars, tables, and dialogs.
+- Use familiar symbols for icon-only actions and provide an accessible name plus a tooltip for anything that may be ambiguous.
+- Verify icons at 100% browser zoom against adjacent type. Reject icons that appear heavier, sharper, more saturated, or more playful than the surrounding interface.
 
 ## Motion Character
 

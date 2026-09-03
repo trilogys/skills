@@ -34,7 +34,7 @@ Documentation: [overview](ai-coding-mentor/README.md) | [installation](ai-coding
 
 [`web-page-designer`](web-page-designer/SKILL.md) designs, implements, redesigns, or reviews polished desktop-first web pages in React, Vue, plain HTML/CSS, and comparable web stacks.
 
-It is a design system and decision workflow rather than a fixed dashboard template. Named patterns such as analytics, CRM, commerce, settings, lists, details, and forms are examples. For any unlisted function, the skill derives a layout from the product's objects, actions, frequency, information hierarchy, working shape, and states.
+It is a design system and decision workflow rather than a fixed dashboard template. It recommends a theme from the product, audience, brand, content, and usage context, with refined blue-and-white as the default when no direction exists. Named patterns such as analytics, CRM, commerce, settings, lists, details, and forms are examples. For any unlisted function, the skill derives a layout from the product's objects, actions, frequency, information hierarchy, working shape, and states.
 
 The stable design language emphasizes:
 
@@ -47,6 +47,7 @@ The stable design language emphasizes:
 The package includes separate guidance for:
 
 - [visual foundation](web-page-designer/references/visual-foundation.md): color, typography, radius, spacing, layout, surfaces, cards, charts, tables, forms, and motion;
+- [theme selection](web-page-designer/references/theme-selection.md): theme precedence, product-fit signals, coherent adaptation, and theme-change audits;
 - [page patterns](web-page-designer/references/page-patterns.md): example structures plus a method for deriving layouts for any function;
 - [framework implementation](web-page-designer/references/framework-implementation.md): React, Vue, HTML/CSS, other web stacks, accessibility, responsive behavior, and library choices;
 - [quality gates](web-page-designer/references/quality-gates.md): product, layout, visual, interaction, accessibility, and screenshot checks.

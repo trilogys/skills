@@ -34,7 +34,7 @@ mentor_level=L1
 
 [`web-page-designer`](web-page-designer/SKILL.md) 用于设计、实现、重构或评审 React、Vue、原生 HTML/CSS 以及其他 Web 技术栈中的专业桌面优先页面。
 
-它是一套设计系统和决策流程，不是固定的仪表盘模板。数据分析、CRM、电商、设置、列表、详情和表单等命名模式只是示例。面对未列出的功能时，skill 会根据产品对象、操作、使用频率、信息层级、工作形态和状态重新推导布局。
+它是一套设计系统和决策流程，不是固定的仪表盘模板。它会根据产品、用户、品牌、内容和使用环境推荐主题；没有明确方向时默认使用精致的蓝白主题。数据分析、CRM、电商、设置、列表、详情和表单等命名模式只是示例。面对未列出的功能时，skill 会根据产品对象、操作、使用频率、信息层级、工作形态和状态重新推导布局。
 
 稳定的设计语言强调：
 
@@ -47,6 +47,7 @@ mentor_level=L1
 包内文档包括：
 
 - [视觉基础](web-page-designer/references/visual-foundation.md)：色彩、排版、圆角、间距、布局、表面、卡片、图表、表格、表单和动画；
+- [主题选择](web-page-designer/references/theme-selection.md)：主题优先级、项目适配信号、一致性调整和主题残留审计；
 - [页面模式](web-page-designer/references/page-patterns.md)：结构示例，以及为任意功能推导布局的方法；
 - [框架实现](web-page-designer/references/framework-implementation.md)：React、Vue、HTML/CSS、其他 Web 技术栈、无障碍、响应式行为和组件库选择；
 - [质量门槛](web-page-designer/references/quality-gates.md)：产品、布局、视觉、交互、无障碍和截图检查。

@@ -2,4 +2,4 @@ interface:
   display_name: "Professional Web Page Designer"
   short_description: "Design polished web pages for any product function"
   brand_color: "#5B82E9"
-  default_prompt: "Use $web-page-designer to design this web page around its real function with the skill's blue-and-white visual system."
+  default_prompt: "Use $web-page-designer to choose a theme from this product's context, default to blue-and-white if no direction exists, and refine the page through visual verification."

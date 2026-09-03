@@ -29,6 +29,8 @@ Use the applicable gates before declaring a page complete. When reviewing, repor
 - Border, radius, shadow, and spacing values come from a small consistent scale.
 - Standard cards are restrained; pills are reserved for statuses and truly pill-shaped controls.
 - Icons come from one coherent family and align optically with text.
+- Icon size, stroke, color, container, and corner character belong to the selected theme; no icon looks pasted in from another system.
+- A changed theme has no leftover raw colors, chart series, focus rings, shadows, overlay tints, or icon treatments from its predecessor.
 - Typography matches the density and container; compact panels do not contain hero-scale headings.
 - No decorative orb, bokeh, heavy blur, or dominant single-hue gradient weakens clarity.
 
@@ -84,6 +86,7 @@ Check:
 - real assets, fonts, icons, and data visuals render;
 - hover, focus, active, selected, loading, empty, and error states are visually distinct;
 - browser console contains no new errors or repeated warnings.
+- at least one refinement pass occurred after the first complete render, and the final screenshot was inspected rather than assumed correct.
 
 ## Reject Before Delivery
 
