@@ -1,12 +1,12 @@
 # Visual Foundation
 
-This is the baseline visual language for the skill. It is distilled from dashboard references into a self-contained specification: cool, bright, operational, data-first, and lightly layered. Apply it across projects and page functions without copying any one interface literally. Preserve an intentional existing brand, but do not invent a different aesthetic for every project.
+This is the default blue-and-white visual language for the skill. It is a self-contained specification: bright, operational, data-first, and lightly layered. Apply it across projects and page functions without copying any one interface literally. Preserve an intentional existing brand, but do not invent a different aesthetic for every project.
 
 ## Stable Style And Controlled Variation
 
 Keep these characteristics stable unless the user explicitly requests another direction:
 
-- cool light canvas, clear white surfaces, near-black text, and restrained accents;
+- soft blue-gray canvas, clear white surfaces, near-black text, and blue as the primary accent;
 - a 4 px spacing foundation, consistent alignment, and a deliberate radius hierarchy;
 - compact desktop controls, data-first hierarchy, light borders, and minimal elevation;
 - cards only for bounded or comparable content, not as the default wrapper for every section;
@@ -14,7 +14,7 @@ Keep these characteristics stable unless the user explicitly requests another di
 
 Vary these when the page's function or existing brand justifies it:
 
-- primary accent hue and chart-series palette;
+- the exact blue accent and supporting chart-series palette;
 - density level, column count, navigation model, and content width;
 - whether a section is carded, divided, tabbed, split, or unframed;
 - chart, table, form, editor, canvas, timeline, or media composition;
@@ -24,9 +24,9 @@ Do not interpret variation as permission to randomly change the palette, inflate
 
 ## Visual DNA
 
-- Cool pale canvas behind high-clarity white surfaces.
+- Soft blue-gray canvas behind high-clarity white surfaces.
 - Near-black text, restrained gray metadata, and one dominant functional accent.
-- Teal, cyan, or blue used to clarify selection, action, and data series rather than tinting the entire interface.
+- Blue used for primary actions, selection, focus, and the leading data series. Cyan, teal, and other hues remain secondary or semantic.
 - A stable sidebar or compact top navigation for product areas; a top toolbar for search, date range, filters, account, and page actions.
 - Thin borders and extremely soft shadows. Separation should come mostly from spacing, value contrast, and alignment.
 - Rounded outer presentation frames, but more restrained internal cards and controls.
@@ -38,38 +38,41 @@ Use semantic names. These values are the house defaults, not mandatory replaceme
 
 ```css
 :root {
-  --canvas: #eef3f5;
-  --canvas-strong: #dae8ec;
+  --canvas: #f3f6fa;
+  --canvas-strong: #e8eef6;
   --surface: #ffffff;
-  --surface-subtle: #f7f9fa;
-  --surface-tinted: #eceef9;
+  --surface-subtle: #f8fafc;
+  --surface-tinted: #eff6ff;
 
-  --text: #202326;
-  --text-strong: #111417;
-  --text-muted: #687078;
-  --text-faint: #98a0a8;
+  --text: #1e293b;
+  --text-strong: #0f172a;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
 
-  --border: #e4e9ec;
-  --border-strong: #d4dce0;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
 
-  --accent: #11a189;
-  --accent-hover: #0d8e79;
-  --accent-soft: #daeceb;
-  --cyan: #0fafc9;
-  --blue: #2f6fed;
-  --ink: #303030;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-active: #1e40af;
+  --accent-soft: #dbeafe;
+  --accent-subtle: #eff6ff;
+  --cyan: #0ea5e9;
+  --teal: #0f9f8e;
+  --ink: #273142;
 
-  --success: #169b62;
-  --warning: #d79a17;
-  --danger: #d85c67;
-  --info: #2f6fed;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --info: #2563eb;
 }
 ```
 
 ### Color discipline
 
-- Let neutral surfaces occupy roughly 80-90% of a productivity interface.
-- Choose teal or blue as the primary accent. Use the other mostly for charts or a distinct secondary category.
+- Let white and blue-gray neutral surfaces occupy roughly 80-90% of a productivity interface.
+- Use blue as the default primary accent for actions, active navigation, focus, selection, links, and the leading data series.
+- Use cyan or teal only for supporting data series or a distinct semantic category. They must not compete with blue for primary-action emphasis.
 - Use green, amber, and red semantically. Never use color as the only status signal.
 - Avoid page-wide gradients. A subtle two-color gradient may appear on one emphasized KPI or balance block, but a solid fill is usually better.
 - Keep charts legible in grayscale: combine color with labels, shape, position, or line style.
@@ -141,7 +144,7 @@ Default surface treatment:
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 1px 2px rgb(16 24 40 / 0.03);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
 }
 ```
 
@@ -168,7 +171,7 @@ Default surface treatment:
 ### Navigation
 
 - Group sidebar items by user task, not internal organization.
-- Use one unmistakable active state: a soft tinted background or a high-contrast dark selection, plus icon/text contrast.
+- Use one unmistakable active state: a soft blue background or a high-contrast blue/ink selection, plus icon/text contrast.
 - Keep utility destinations such as help and settings near the bottom when appropriate.
 - Do not show multiple competing active indicators.
 

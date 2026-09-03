@@ -38,7 +38,7 @@ It is a design system and decision workflow rather than a fixed dashboard templa
 
 The stable design language emphasizes:
 
-- cool neutral canvases, white surfaces, near-black text, and restrained functional accents;
+- soft blue-gray canvases, white surfaces, near-black text, and blue as the primary functional accent;
 - a 4 px spacing foundation and a deliberate radius hierarchy;
 - light borders, minimal elevation, and cards only where content is genuinely bounded or comparable;
 - desktop information density, predictable navigation, readable data, and complete interaction states;

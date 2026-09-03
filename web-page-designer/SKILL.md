@@ -1,6 +1,6 @@
 ---
 name: web-page-designer
-description: Design, implement, redesign, or review polished desktop-first web pages across React, Vue, plain HTML/CSS, and comparable web stacks. Apply a reusable visual system for color, radius, spacing, cards, layout, typography, states, and motion while deriving the page structure from each project's actual function. Use for product interfaces and restrained SaaS pages in any domain; do not use for native mobile apps or illustration-only brand work.
+description: Design, implement, redesign, or review polished desktop-first web pages across React, Vue, plain HTML/CSS, and comparable web stacks. Apply a reusable blue-and-white visual system for color, radius, spacing, cards, layout, typography, states, and motion while deriving the page structure from each project's actual function. Use for product interfaces and restrained SaaS pages in any domain; do not use for native mobile apps or illustration-only brand work.
 ---
 
 # Web Page Designer
@@ -9,14 +9,14 @@ Create working web interfaces that feel calm, precise, and ready for repeated pr
 
 ## Reference Routing
 
-- Always read [references/visual-foundation.md](references/visual-foundation.md) before making visual decisions. It is the canonical style baseline distilled from the supplied reference images.
+- Always read [references/visual-foundation.md](references/visual-foundation.md) before making visual decisions. It is the canonical blue-and-white style baseline.
 - Read [references/page-patterns.md](references/page-patterns.md) when choosing or deriving the information architecture for a page or feature. Its named page types are examples, not a supported-function limit.
 - Read [references/framework-implementation.md](references/framework-implementation.md) before implementing in React, Vue, or plain HTML/CSS.
 - Read [references/quality-gates.md](references/quality-gates.md) before final verification or when reviewing an existing interface.
 
 ## Design Position
 
-- Treat the reference visual language as the default house style. Preserve an intentional existing brand and component system; otherwise keep the skill's visual DNA stable across projects and vary only what the function, data, or brand meaningfully requires.
+- Treat the blue-and-white reference language as the default house style. Preserve an intentional existing brand and component system; otherwise keep the skill's visual DNA stable across projects and vary only what the function, data, or brand meaningfully requires.
 - Start from the product's real task, content, and user frequency. A dashboard, editor, settings page, checkout, and marketing page require different structures.
 - Support any web function. If no example pattern matches, derive a new structure from the user's objects, actions, information priority, and workflow instead of forcing the page into a dashboard or card grid.
 - Optimize desktop product interfaces for scanning, comparison, and repeated action. Keep them quiet, compact, predictable, and keyboard-friendly.
