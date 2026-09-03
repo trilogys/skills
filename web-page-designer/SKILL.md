@@ -13,6 +13,7 @@ Create working web interfaces that feel calm, precise, and ready for repeated pr
 - Read [references/page-patterns.md](references/page-patterns.md) when choosing or deriving the information architecture for a page or feature. Its named page types are examples, not a supported-function limit.
 - Read [references/framework-implementation.md](references/framework-implementation.md) before implementing in React, Vue, or plain HTML/CSS.
 - Read [references/quality-gates.md](references/quality-gates.md) before final verification or when reviewing an existing interface.
+- Use [examples/blue-white-operations-dashboard.html](examples/blue-white-operations-dashboard.html) only as a visual calibration sample when the project has no established brand. Do not copy its dashboard structure into unrelated workflows.
 
 ## Design Position
 

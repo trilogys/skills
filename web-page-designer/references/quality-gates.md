@@ -24,6 +24,7 @@ Use the applicable gates before declaring a page complete. When reviewing, repor
 ## Visual System
 
 - Colors use semantic tokens and pass essential contrast requirements.
+- When the house theme applies, light and medium blues carry selection and data emphasis; deep blue is limited to compact controls that require white-text contrast.
 - The page is mostly neutral; accents communicate action, selection, data, or status.
 - Border, radius, shadow, and spacing values come from a small consistent scale.
 - Standard cards are restrained; pills are reserved for statuses and truly pill-shaped controls.

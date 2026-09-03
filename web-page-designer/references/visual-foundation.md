@@ -38,41 +38,46 @@ Use semantic names. These values are the house defaults, not mandatory replaceme
 
 ```css
 :root {
-  --canvas: #f3f6fa;
-  --canvas-strong: #e8eef6;
+  --canvas: #f1f5f9;
+  --canvas-strong: #dce6f0;
   --surface: #ffffff;
-  --surface-subtle: #f8fafc;
-  --surface-tinted: #eff6ff;
+  --surface-subtle: #f9fbfd;
+  --surface-tinted: #f2f6ff;
 
-  --text: #1e293b;
-  --text-strong: #0f172a;
-  --text-muted: #64748b;
-  --text-faint: #94a3b8;
+  --text: #2b3445;
+  --text-strong: #172033;
+  --text-muted: #6b7689;
+  --text-faint: #9aa6b7;
 
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
+  --border: #e6ecf2;
+  --border-strong: #d4dee9;
 
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-active: #1e40af;
-  --accent-soft: #dbeafe;
-  --accent-subtle: #eff6ff;
-  --cyan: #0ea5e9;
-  --teal: #0f9f8e;
-  --ink: #273142;
+  --accent: #5b82e9;
+  --accent-hover: #4f76df;
+  --accent-active: #4168ce;
+  --accent-text: #315db8;
+  --accent-action: #315db8;
+  --accent-soft: #e6eeff;
+  --accent-subtle: #f4f7ff;
+  --chart-blue: #75a0f3;
+  --chart-blue-soft: #c7d8fa;
+  --cyan: #77c5e8;
+  --teal: #66b8b1;
+  --ink: #2d3440;
 
-  --success: #16a34a;
-  --warning: #d97706;
-  --danger: #dc2626;
-  --info: #2563eb;
+  --success: #2f9b6a;
+  --warning: #c99237;
+  --danger: #c95f6c;
+  --info: #5b82e9;
 }
 ```
 
 ### Color discipline
 
 - Let white and blue-gray neutral surfaces occupy roughly 80-90% of a productivity interface.
-- Use blue as the default primary accent for actions, active navigation, focus, selection, links, and the leading data series.
-- Use cyan or teal only for supporting data series or a distinct semantic category. They must not compete with blue for primary-action emphasis.
+- Use the medium blue `--accent` for leading data, selection fills, focus rings, and non-text decoration. Use `--accent-text` for links and blue text so contrast remains accessible.
+- Reserve the deeper `--accent-action` for small primary buttons that need white text. Do not fill large page regions with it.
+- Use lighter blue tints for navigation selection and card emphasis. Use cyan or teal only for supporting data series or a distinct semantic category; they must not compete with blue for primary-action emphasis.
 - Use green, amber, and red semantically. Never use color as the only status signal.
 - Avoid page-wide gradients. A subtle two-color gradient may appear on one emphasized KPI or balance block, but a solid fill is usually better.
 - Keep charts legible in grayscale: combine color with labels, shape, position, or line style.
@@ -171,7 +176,7 @@ Default surface treatment:
 ### Navigation
 
 - Group sidebar items by user task, not internal organization.
-- Use one unmistakable active state: a soft blue background or a high-contrast blue/ink selection, plus icon/text contrast.
+- Use one unmistakable active state: a soft blue background with `--accent-text`, or a compact high-contrast blue selection when necessary.
 - Keep utility destinations such as help and settings near the bottom when appropriate.
 - Do not show multiple competing active indicators.
 

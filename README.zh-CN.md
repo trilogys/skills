@@ -50,6 +50,7 @@ mentor_level=L1
 - [页面模式](web-page-designer/references/page-patterns.md)：结构示例，以及为任意功能推导布局的方法；
 - [框架实现](web-page-designer/references/framework-implementation.md)：React、Vue、HTML/CSS、其他 Web 技术栈、无障碍、响应式行为和组件库选择；
 - [质量门槛](web-page-designer/references/quality-gates.md)：产品、布局、视觉、交互、无障碍和截图检查。
+- [HTML 校准 Demo](web-page-designer/examples/blue-white-operations-dashboard.html)：使用同一套 tokens 和质量规则实现的可交互蓝白运营页面。
 
 开始使用：
 
@@ -121,6 +122,7 @@ skills/
 └── web-page-designer/
     ├── SKILL.md
     ├── agents/
+    ├── examples/
     └── references/
 ```
 

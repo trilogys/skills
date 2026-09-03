@@ -50,6 +50,7 @@ The package includes separate guidance for:
 - [page patterns](web-page-designer/references/page-patterns.md): example structures plus a method for deriving layouts for any function;
 - [framework implementation](web-page-designer/references/framework-implementation.md): React, Vue, HTML/CSS, other web stacks, accessibility, responsive behavior, and library choices;
 - [quality gates](web-page-designer/references/quality-gates.md): product, layout, visual, interaction, accessibility, and screenshot checks.
+- [HTML calibration demo](web-page-designer/examples/blue-white-operations-dashboard.html): an interactive blue-and-white operations page built from the same tokens and quality rules.
 
 Start with:
 
@@ -121,6 +122,7 @@ skills/
 └── web-page-designer/
     ├── SKILL.md
     ├── agents/
+    ├── examples/
     └── references/
 ```
 
