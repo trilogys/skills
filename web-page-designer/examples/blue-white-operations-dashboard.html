@@ -34,6 +34,11 @@
       --warning-soft: #fbf3e4;
       --danger: #c95f6c;
       --danger-soft: #fbebed;
+      --type-body: 14px;
+      --type-meta: 12px;
+      --type-card-title: 15px;
+      --type-page-title: 27px;
+      --type-kpi: 30px;
       --shadow-shell: 0 24px 70px rgb(44 65 92 / 0.105);
       --shadow-panel: 0 1px 2px rgb(15 23 42 / 0.025), 0 10px 28px rgb(38 58 84 / 0.018);
       --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -49,9 +54,12 @@
       padding: 24px;
       background: var(--canvas-strong);
       color: var(--text);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 14px;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", sans-serif;
+      font-size: var(--type-body);
       letter-spacing: 0;
+      font-optical-sizing: auto;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
     }
 
     button, input, select { font: inherit; letter-spacing: 0; }
@@ -319,7 +327,7 @@
 
     h1 {
       color: var(--text-strong);
-      font-size: 27px;
+      font-size: var(--type-page-title);
       line-height: 1.25;
       font-weight: 700;
     }
@@ -374,7 +382,7 @@
     .metric-value {
       margin-top: 13px;
       color: var(--text-strong);
-      font-size: 30px;
+      font-size: var(--type-kpi);
       line-height: 1;
       font-weight: 650;
       font-variant-numeric: tabular-nums;
@@ -417,7 +425,7 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .panel-head h2 { color: var(--text-strong); font-size: 15px; font-weight: 650; }
+    .panel-head h2 { color: var(--text-strong); font-size: var(--type-card-title); font-weight: 650; }
     .panel-head p { margin-top: 4px; color: var(--text-muted); font-size: 12px; }
 
     .segmented {

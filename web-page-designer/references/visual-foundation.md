@@ -175,6 +175,7 @@ Default surface treatment:
 
 ## Typography
 
+- Read `typography-system.md` and choose a semantic type scale for the current product. The values below are calibration ranges for this visual style, not fixed requirements.
 - Prefer the project's font. Otherwise use Inter, Geist, or a system sans stack.
 - Keep letter spacing at `0` for ordinary interface text.
 - Page title: 24-30 px, usually 600-650 weight.

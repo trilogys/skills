@@ -11,6 +11,7 @@ Create working web interfaces that feel calm, precise, and ready for repeated pr
 
 - Always read [references/visual-foundation.md](references/visual-foundation.md) before making visual decisions. It is the canonical blue-and-white style baseline.
 - Read [references/theme-selection.md](references/theme-selection.md) before selecting, recommending, or changing a theme. Blue-and-white is the fallback, not a reason to ignore product context or an intentional brand.
+- Read [references/typography-system.md](references/typography-system.md) before establishing or changing the type scale. Font sizes are project decisions, not fixed values inherited from the calibration examples.
 - Read [references/page-patterns.md](references/page-patterns.md) when choosing or deriving the information architecture for a page or feature. Its named page types are examples, not a supported-function limit.
 - Read [references/framework-implementation.md](references/framework-implementation.md) before implementing in React, Vue, or plain HTML/CSS.
 - Read [references/quality-gates.md](references/quality-gates.md) before final verification or when reviewing an existing interface.
@@ -64,6 +65,7 @@ Before implementation, be able to state:
 - the information order from summary to evidence to action;
 - the example pattern selected from `page-patterns.md`, or the custom structure derived for an unlisted function;
 - the density level: focused, standard, or dense;
+- the typography strategy for the audience, language, reading distance, content density, and chosen font;
 - the responsive collapse strategy.
 
 Do not expose this analysis as visible page copy.
@@ -74,7 +76,7 @@ Use `theme-selection.md` to select one coherent direction. Be able to state:
 
 - why the theme fits this product and audience;
 - canvas, surface, text, accent, semantic-color, and data-visualization relationships;
-- radius, spacing, density, elevation, typography, and icon character;
+- radius, spacing, density, elevation, typography role relationships, and icon character;
 - which existing brand elements remain unchanged;
 - what would make the theme inappropriate.
 

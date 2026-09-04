@@ -34,6 +34,7 @@ Use the applicable gates before declaring a page complete. When reviewing, repor
 - A changed theme has no leftover raw colors, chart series, focus rings, shadows, overlay tints, or icon treatments from its predecessor.
 - Typography matches the density and container; compact panels do not contain hero-scale headings.
 - Font weight carries a clear hierarchy; routine page and panel headings are not all rendered at 700+.
+- Font sizes come from a project-specific semantic type scale justified by audience, language, density, reading distance, and font metrics; calibration examples were not copied as constants.
 - No decorative orb, bokeh, heavy blur, or dominant single-hue gradient weakens clarity.
 
 ## Components And States
@@ -65,6 +66,7 @@ Use the applicable gates before declaring a page complete. When reviewing, repor
 - The entire primary workflow works with a keyboard.
 - Status is not communicated by color alone.
 - Text and controls remain usable at browser zoom and with longer localized strings.
+- The type hierarchy survives 100%, 125%, and 200% zoom without clipped controls, collapsed density, or ambiguous emphasis.
 - Errors are associated with their fields and summarized when a long form needs it.
 
 ## Responsive And Visual Verification

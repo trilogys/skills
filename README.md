@@ -42,6 +42,7 @@ The design process emphasizes:
 - a refined blue-and-white fallback with a cool exterior frame and a white or near-white working canvas;
 - a 4 px spacing foundation and a coordinated radius family: 28-32 px presentation shells, 10-12 px product panels, 8-10 px controls, and 10-12 px floating menus;
 - medium-weight interface typography, tabular numeric rhythm, restrained blue emphasis, faint borders, and broad low-opacity shadows;
+- a project-specific semantic type scale selected from audience, task, language, reading distance, content density, and font metrics rather than copied pixel constants;
 - one coherent outline icon family with controlled size, stroke, color, container, and optical alignment;
 - cards only where content is genuinely bounded or comparable, while every page topology follows the real workflow;
 - purposeful motion under 300 ms, complete interaction states, reduced-motion support, and iterative screenshot refinement.
@@ -49,6 +50,7 @@ The design process emphasizes:
 The package includes separate guidance for:
 
 - [visual foundation](web-page-designer/references/visual-foundation.md): color, typography, radius, spacing, layout, surfaces, cards, charts, tables, forms, and motion;
+- [adaptive typography](web-page-designer/references/typography-system.md): density baselines, semantic roles, CJK/Latin calibration, weights, line height, responsive type, and zoom tests;
 - [theme selection](web-page-designer/references/theme-selection.md): theme precedence, product-fit signals, coherent adaptation, and theme-change audits;
 - [page patterns](web-page-designer/references/page-patterns.md): example structures plus a method for deriving layouts for any function;
 - [framework implementation](web-page-designer/references/framework-implementation.md): React, Vue, HTML/CSS, accessible floating controls, responsive behavior, and library choices;
@@ -57,6 +59,8 @@ The package includes separate guidance for:
 - [visual reference assets](web-page-designer/assets/NOTICE.md): two supplied screenshots used only to calibrate finish, not as reusable brands or page templates.
 
 The skill checks controls while they are open, not only in their closed state. When native operating-system select popups conflict with a coordinated visual brief, it requires a proven accessible primitive or a complete button/listbox implementation with keyboard navigation, Escape handling, outside-click dismissal, selected semantics, and focus return.
+
+Typography examples are calibration ranges, not a universal size table. A dense expert console, standard SaaS product, reading workspace, consumer flow, and distant display each establish their own body, control, metadata, title, and data roles. Chinese-heavy interfaces are calibrated independently from Latin-heavy layouts and verified at 100%, 125%, and 200% browser zoom.
 
 Start with:
 
