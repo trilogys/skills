@@ -45,6 +45,19 @@ class StateToolTests(unittest.TestCase):
             self.assertEqual(first.returncode, 0, first.stderr)
             self.assertTrue((global_dir / "GLOBAL_PROFILE.md").is_file())
             self.assertTrue((project / ".ai-mentor" / "PROJECT_PROFILE.md").is_file())
+            for period in ("daily", "weekly", "monthly"):
+                self.assertTrue(
+                    (global_dir / "reports" / "learning" / period).is_dir()
+                )
+                self.assertTrue(
+                    (
+                        project
+                        / ".ai-mentor"
+                        / "reports"
+                        / "learning"
+                        / period
+                    ).is_dir()
+                )
             self.assertIn(
                 "Default mentor level: `L2`",
                 (project / ".ai-mentor" / "MENTOR_CONFIG.md").read_text(),

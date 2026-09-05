@@ -17,6 +17,7 @@ The skill defaults to roughly **85% delivery / 15% learning** through `/normal` 
 - Excludes proprietary project detail from the global profile.
 - Supports safe profile export/import without overwriting live state.
 - Keeps evidence-based review, verification, Bug DB, ADRs, technical debt, `/check`, `/weekly`, and `/monthly`.
+- Exports evidence-based daily, weekly, and monthly learning reports as Markdown, standalone HTML, Word, PDF, or all four formats.
 
 ## How it decides what to teach
 
@@ -59,6 +60,45 @@ Use ai-coding-mentor.
 Let me design the transaction boundary before you implement it.
 ```
 
+## Learning report exports
+
+Markdown is the canonical source and default format. HTML, DOCX, and PDF outputs are derived from the same normalized report so evidence, ownership, conclusions, and proof targets remain consistent.
+
+```text
+Use ai-coding-mentor.
+/daily format=md
+```
+
+```text
+Use ai-coding-mentor.
+/weekly format=html week=2026-W36
+```
+
+```text
+Use ai-coding-mentor.
+/monthly format=docx,pdf month=2026-09
+```
+
+```text
+Use ai-coding-mentor.
+/export period=weekly date=2026-09-05 format=all scope=project
+```
+
+Exports are explicit-only by default: routine coding tasks, `/learn`, `/summary`, and profile updates do not create report files. Automatic generation happens only after the user intentionally changes `Automatic learning report exports` to `Yes` in project or global settings.
+
+Defaults are the current local period, local timezone, project scope, and Markdown. `word` is accepted as an alias for a real `.docx` file. Exports are written under:
+
+```text
+<repo>/.ai-mentor/reports/learning/
+├── daily/YYYY-MM-DD/
+├── weekly/YYYY-Www/
+└── monthly/YYYY-MM/
+```
+
+DOCX and PDF exports require a host with real document generation and rendering support. The skill never renames HTML or Markdown to simulate those formats. Every DOCX and PDF must be rendered to page images and inspected before it is reported as verified.
+
+See the [learning report export guide](references/learning-export-guide.md) for evidence selection, privacy rules, filenames, collision handling, cross-format parity, and verification gates.
+
 ## Persistent state
 
 Global engineer state:
@@ -72,6 +112,10 @@ Global engineer state:
 ├── EVIDENCE_LEDGER.md
 ├── imports/
 └── reports/
+    └── learning/
+        ├── daily/
+        ├── weekly/
+        └── monthly/
 ```
 
 Project context:
@@ -86,6 +130,10 @@ Project context:
 ├── TECH_DEBT.md
 ├── bugs/
 └── reports/
+    └── learning/
+        ├── daily/
+        ├── weekly/
+        └── monthly/
 ```
 
 Install the Skill in each compatible CLI, but point every local CLI at the same profile directory. Reinstalling the Skill does not reset the profile.

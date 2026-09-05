@@ -31,6 +31,13 @@ PROJECT_FILES = {
     "TECH_DEBT.md": "TECH_DEBT.md",
 }
 
+LEARNING_PERIODS = ("daily", "weekly", "monthly")
+
+
+def create_learning_report_dirs(reports_root: Path) -> None:
+    for period in LEARNING_PERIODS:
+        (reports_root / "learning" / period).mkdir(parents=True, exist_ok=True)
+
 
 def resolve_global_dir(value: Optional[str]) -> Path:
     if value:
@@ -121,6 +128,7 @@ def main() -> int:
             skipped.extend(old)
             (global_root / "imports").mkdir(parents=True, exist_ok=True)
             (global_root / "reports").mkdir(parents=True, exist_ok=True)
+            create_learning_report_dirs(global_root / "reports")
 
         if args.scope in {"all", "project"}:
             mentor_root = project_root / ".ai-mentor"
@@ -129,6 +137,7 @@ def main() -> int:
             skipped.extend(old)
             (mentor_root / "bugs").mkdir(parents=True, exist_ok=True)
             (mentor_root / "reports").mkdir(parents=True, exist_ok=True)
+            create_learning_report_dirs(mentor_root / "reports")
 
             bug_template = mentor_root / "bugs" / "BUG_TEMPLATE.md"
             if bug_template.exists():

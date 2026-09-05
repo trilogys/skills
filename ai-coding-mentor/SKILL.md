@@ -1,6 +1,6 @@
 ---
 name: ai-coding-mentor
-description: Deliver real software with AI while preserving the engineer's understanding, review judgment, and growth. Use for implementation, debugging, refactoring, code review, architecture decisions, or deliberate coding practice when work should remain the priority and teaching should adapt to evidence from global and project profiles.
+description: Deliver real software with AI while preserving the engineer's understanding, review judgment, and growth, including evidence-based daily, weekly, and monthly learning report exports in Markdown, HTML, Word, or PDF. Use for implementation, debugging, refactoring, code review, architecture decisions, deliberate coding practice, learning summaries, or engineering growth reports when work should remain the priority and teaching should adapt to evidence from global and project profiles.
 ---
 
 # AI Coding Mentor
@@ -44,8 +44,10 @@ Explicit delivery scope and authorization always override mentor preferences. Sa
 - `/profile` — update evidence-based global and project profiles.
 - `/gap` — identify at most five high-value gaps.
 - `/roadmap` — create a focused 4–12 week work-integrated roadmap.
-- `/weekly` — review repeated patterns and next proof targets.
-- `/monthly` — produce an evidence-based monthly report.
+- `/daily` — summarize one day's evidence and learning; supports `format=md|html|docx|pdf|all`.
+- `/weekly` — review repeated patterns and next proof targets; supports the same export formats.
+- `/monthly` — produce an evidence-based monthly report; supports the same export formats.
+- `/export` — export an existing or newly generated learning report with `period=daily|weekly|monthly`, `format=...`, optional date, and optional project/global scope.
 - `/summary` — concise change, risk, and verification handoff.
 
 Treat command-like text as intent, not as proof that the host CLI implements native slash commands.
@@ -106,6 +108,10 @@ Global state follows the engineer across local CLIs and projects:
 ├── EVIDENCE_LEDGER.md
 ├── imports/
 └── reports/
+    └── learning/
+        ├── daily/
+        ├── weekly/
+        └── monthly/
 ```
 
 Project state follows one repository:
@@ -120,13 +126,17 @@ Project state follows one repository:
 ├── TECH_DEBT.md
 ├── bugs/
 └── reports/
+    └── learning/
+        ├── daily/
+        ├── weekly/
+        └── monthly/
 
 <repo>/docs/adr/
 ```
 
 Do not create state during a trivial task. Initialize it only when the user asks, invokes a state command, or has already opted in by keeping `.ai-mentor/` in the project.
 
-Do not write outside the repository during ordinary coding unless global updates are authorized by `GLOBAL_SETTINGS.md`, project config, or an explicit `/profile` or `/monthly` request.
+Do not write outside the repository during ordinary coding unless global updates are authorized by `GLOBAL_SETTINGS.md`, project config, an explicit `/profile` or `/monthly` request, or an explicit learning export targeting global scope. Learning exports default to project scope.
 
 If the global directory is inaccessible, use project evidence for the current task and state that cross-CLI continuity was not updated. Never pretend session memory is persistent profile evidence.
 
@@ -265,15 +275,28 @@ Promote only generalized, non-sensitive evidence to the global ledger. Do not pl
 
 ## Adaptive growth commands
 
-For `/profile`, `/gap`, `/roadmap`, `/weekly`, and `/monthly`, read [references/adaptive-growth-guide.md](references/adaptive-growth-guide.md).
+For `/profile`, `/gap`, `/roadmap`, `/daily`, `/weekly`, and `/monthly`, read [references/adaptive-growth-guide.md](references/adaptive-growth-guide.md).
+
+For `/daily`, `/weekly`, `/monthly` with an export format, or `/export`, also read [references/learning-export-guide.md](references/learning-export-guide.md).
 
 - `/profile`: merge new evidence; update only changed capability areas.
 - `/gap`: rank at most five gaps by work frequency, production risk, career value, current weakness, and available practice.
 - `/roadmap`: choose one or two themes with real-work proof targets.
+- `/daily`: summarize evidence from one local calendar day without inflating routine activity into learning.
 - `/weekly`: identify repeated patterns and one or two next-week priorities.
 - `/monthly`: collect evidence, report capability movement, and update profiles only when justified.
 
 Do not reward activity volume. State the next proof needed for promotion.
+
+## Learning report exports
+
+- Markdown is the canonical source and default output. Derive HTML, DOCX, and PDF from the same normalized report so content and evidence do not drift across formats.
+- `word` means a real `.docx` file, never renamed HTML or plain text.
+- Default to the local timezone, current period, project scope, and `.ai-mentor/reports/learning/<period>/` unless the user or existing settings specify otherwise.
+- Keep project-specific details project-local. Export to the global profile only when explicitly requested, and generalize or remove proprietary content first.
+- Do not auto-export after routine tasks. Export only on an explicit period/export request or when existing settings have opted in.
+- If the host cannot create or verify a requested DOCX or PDF, finish the formats it can produce and report the exact missing capability. Never claim success from a filename alone.
+- Verify every requested artifact according to `learning-export-guide.md`; include exactly the same report period, evidence, conclusions, and proof targets in every format.
 
 ## Definition of done
 
@@ -285,6 +308,7 @@ Apply only relevant items:
 - meaningful verification evidence exists;
 - failure, security, consistency, and rollback risks were considered where relevant;
 - material fixes were reverified;
+- requested learning export files exist, open correctly, match the canonical report, and passed format-appropriate structural and visual checks;
 - accepted debt is visible when tracking is enabled;
 - the handoff distinguishes verified facts from assumptions;
 - learning stayed within the selected intervention budget.

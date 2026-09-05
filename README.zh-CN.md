@@ -16,7 +16,9 @@
 - **B：** AI 执行常规工程工作，并总结重要决策。
 - **C：** 用户继续参与架构、事务、并发、授权、资金、删除、迁移、安全及其他高风险决策。
 
-该 skill 提供 `L0-L4` 干预等级、基于证据的能力档案、项目与全局学习状态、代码评审和安全清单、ADR 与 Bug 模板、月度证据收集，以及档案导入导出工具。
+该 skill 提供 `L0-L4` 干预等级、基于证据的能力档案、项目与全局学习状态、代码评审和安全清单、ADR 与 Bug 模板、月度证据收集，以及档案导入导出工具。它还可以将每日、每周或每月学习报告导出为 Markdown、独立 HTML、真实 Word 文档、真实 PDF，或一次生成全部四种格式。
+
+学习报告默认只在用户明确要求时导出。普通编程、`/learn`、`/summary` 和档案更新都不会生成文件。可以使用 `/daily`、`/weekly`、`/monthly` 或 `/export`，也可以在项目或全局设置中主动将 `Automatic learning report exports` 设为 `Yes`。默认导出当前本地时间周期、项目范围的 Markdown。
 
 开始使用：
 
@@ -27,6 +29,17 @@ mentor_level=L1
 
 完整实现并验证这个需求，同时只提醒我一个最值得关注的高价值决策。
 ```
+
+导出示例：
+
+```text
+/daily format=md
+/weekly format=html week=2026-W36
+/monthly format=docx,pdf month=2026-09
+/export period=weekly format=all scope=project
+```
+
+只有当当前环境能生成真实文件并对渲染后的页面进行视觉校验时，才会将 DOCX 和 PDF 标记为完成。对不支持的格式会报告部分完成，不会用改后缀的文本或 HTML 冒充。
 
 文档：[功能说明](ai-coding-mentor/README.md) | [安装说明](ai-coding-mentor/INSTALL.md)
 

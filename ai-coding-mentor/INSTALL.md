@@ -20,6 +20,19 @@ On macOS/Linux, the Claude directory can be a symlink to the canonical `.agents`
 
 Always copy the whole folder, not only `SKILL.md`.
 
+## Learning export capabilities
+
+Markdown and standalone HTML reports require only ordinary file-writing support. Word and PDF exports require the active CLI or environment to provide real document generation and rendering tools.
+
+| Format | Required behavior |
+|---|---|
+| Markdown | Write and reopen UTF-8 `.md` |
+| HTML | Create standalone semantic HTML with embedded CSS, then inspect it in a browser and print layout |
+| Word | Create a real `.docx`, render every page to PNG, and inspect the result |
+| PDF | Create a real PDF, reopen it, render every page to PNG, and inspect the result |
+
+Codex environments with document and PDF artifact skills should use those dedicated workflows. Other CLIs may use installed tools such as `python-docx`, LibreOffice, ReportLab, or Poppler, but must perform equivalent structural and visual checks. If the required renderer is unavailable, the skill completes supported formats and reports the missing capability instead of creating a fake file.
+
 ## Platform locations
 
 | CLI | Personal Skill location | Project Skill location |

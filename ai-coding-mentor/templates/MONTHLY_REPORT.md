@@ -1,4 +1,11 @@
-# Monthly Engineering Growth Report — YYYY-MM
+# Monthly Engineering Growth Report - YYYY-MM
+
+- Report ID:
+- Period: YYYY-MM-DD to YYYY-MM-DD
+- Timezone:
+- Scope: Project | Global
+- Evidence cutoff:
+- Canonical SHA-256:
 
 ## 1. Work Summary
 
@@ -52,6 +59,9 @@ Generalized statements only; no confidential detail.
 
 ## 10. Verification Status
 
+- Status: Verified | Partially verified | Not verified - reasoning only
 - Evidence collected from:
 - Missing or unavailable evidence:
 - Confidence limits:
+- Formats generated:
+- Formats not generated and why:

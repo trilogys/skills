@@ -20,13 +20,41 @@ class PackageInvariantTests(unittest.TestCase):
         self.assertLessEqual(len(text.splitlines()), 500)
 
     def test_every_local_markdown_link_resolves(self) -> None:
-        text = SKILL.read_text(encoding="utf-8")
-        paths = re.findall(r"\[[^\]]+\]\(([^)]+)\)", text)
-        self.assertTrue(paths)
-        for relative in paths:
-            if "://" in relative:
-                continue
+        sources = [SKILL, *sorted((ROOT / "references").glob("*.md"))]
+        local_links = 0
+        for source in sources:
+            text = source.read_text(encoding="utf-8")
+            paths = re.findall(r"\[[^\]]+\]\(([^)]+)\)", text)
+            for relative in paths:
+                if "://" in relative or relative.startswith("#"):
+                    continue
+                local_links += 1
+                target = relative.split("#", 1)[0]
+                self.assertTrue((source.parent / target).is_file(), f"{source}: {relative}")
+        self.assertGreater(local_links, 0)
+
+    def test_learning_export_resources_are_complete(self) -> None:
+        expected = (
+            "references/learning-export-guide.md",
+            "templates/DAILY_LEARNING_REPORT.md",
+            "templates/WEEKLY_LEARNING_REPORT.md",
+            "templates/MONTHLY_REPORT.md",
+        )
+        for relative in expected:
             self.assertTrue((ROOT / relative).is_file(), relative)
+
+    def test_learning_exports_are_explicit_by_default(self) -> None:
+        skill_text = SKILL.read_text(encoding="utf-8")
+        global_settings = (ROOT / "templates" / "GLOBAL_SETTINGS.md").read_text(
+            encoding="utf-8"
+        )
+        project_settings = (ROOT / "templates" / "MENTOR_CONFIG.md").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("Do not auto-export after routine tasks", skill_text)
+        self.assertIn("Automatic learning report exports: No", global_settings)
+        self.assertIn("Automatic learning report exports: No", project_settings)
 
     def test_default_is_work_first_l1(self) -> None:
         text = SKILL.read_text(encoding="utf-8")

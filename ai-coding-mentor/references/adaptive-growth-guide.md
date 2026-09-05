@@ -1,6 +1,6 @@
 # Adaptive Growth Workflow
 
-Use this reference for `/profile`, `/gap`, `/roadmap`, `/weekly`, and `/monthly`.
+Use this reference for `/profile`, `/gap`, `/roadmap`, `/daily`, `/weekly`, and `/monthly`.
 
 ## First setup
 
@@ -76,6 +76,19 @@ Each week needs:
 
 Do not prescribe long courses when the concept can be practiced in current code.
 
+## `/daily`
+
+Summarize one local calendar day:
+
+- meaningful work and verified outcomes;
+- one or two decisions or risks the user understood, influenced, or reviewed;
+- reusable lessons grounded in that work;
+- ownership (`User`, `Shared`, or `AI`) for each claimed learning signal;
+- failures, uncertainty, or missing evidence;
+- one next proof or recognition cue.
+
+Do not turn commit counts, elapsed time, AI-owned output, or routine activity into learning evidence. If the day contains no meaningful evidence, say so briefly instead of manufacturing lessons.
+
 ## `/weekly`
 
 Summarize:
@@ -88,6 +101,8 @@ Summarize:
 - one or two next-week proof targets.
 
 Do not change global levels from a weekly summary alone unless it contains strong inspectable evidence.
+
+When export formats are requested, follow `learning-export-guide.md` and use `templates/WEEKLY_LEARNING_REPORT.md`.
 
 ## `/monthly`
 
@@ -111,6 +126,8 @@ Required analysis:
 8. exact future proof needed for promotion.
 
 Update the global profile only when allowed and justified. Write a generalized global report under the global `reports/` directory only when requested.
+
+When export formats are requested, follow `learning-export-guide.md`. Write the canonical export under `.ai-mentor/reports/learning/monthly/`. If `.ai-mentor/reports/YYYY-MM.md` already exists, preserve it in place; do not silently relocate, replace, or delete it.
 
 ## Promotion example
 

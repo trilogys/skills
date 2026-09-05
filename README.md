@@ -16,7 +16,9 @@ Its work-first model separates tasks into three ownership classes:
 - **B:** AI executes ordinary engineering work and summarizes the important decisions.
 - **C:** the user remains involved in architecture, transactions, concurrency, authorization, money, deletion, migrations, security, and other high-risk decisions.
 
-The skill provides intervention levels `L0-L4`, evidence-based capability profiles, project and global learning state, review and security checklists, ADR and bug templates, monthly evidence collection, and profile export/import tools.
+The skill provides intervention levels `L0-L4`, evidence-based capability profiles, project and global learning state, review and security checklists, ADR and bug templates, monthly evidence collection, and profile export/import tools. It can also export daily, weekly, or monthly learning reports as Markdown, standalone HTML, real Word documents, real PDFs, or all four formats.
+
+Learning report export is explicit-only by default. Ordinary coding, `/learn`, `/summary`, and profile updates do not generate files. Use `/daily`, `/weekly`, `/monthly`, or `/export`, or intentionally enable `Automatic learning report exports` in project or global settings. The default export is Markdown for the current local period in project scope.
 
 Start with:
 
@@ -27,6 +29,17 @@ mentor_level=L1
 
 Implement this requirement completely, verify it, and focus my attention on at most one high-value decision.
 ```
+
+Export examples:
+
+```text
+/daily format=md
+/weekly format=html week=2026-W36
+/monthly format=docx,pdf month=2026-09
+/export period=weekly format=all scope=project
+```
+
+DOCX and PDF are accepted only when the environment can create real files and visually verify their rendered pages; unsupported formats are reported as partial completion rather than simulated with renamed text or HTML.
 
 Documentation: [overview](ai-coding-mentor/README.md) | [installation](ai-coding-mentor/INSTALL.md)
 
